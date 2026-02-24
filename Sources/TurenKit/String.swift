@@ -206,6 +206,10 @@ public extension String {
         guard count < length else { return self }
         return self + String(repeating: character, count: length - count)
     }
+
+    func asUrl() -> URL? {
+        return URL(string: self)
+    }
 }
 
 // MARK: - Optional String
