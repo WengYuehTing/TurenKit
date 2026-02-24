@@ -15,8 +15,8 @@ public extension UIColor {
 
     /// 通过十六进制字符串初始化 UIColor
     /// - Parameter hex: 十六进制颜色字符串，支持格式：#RGB, #RRGGBB, #ARGB, #AARRGGBB
-    convenience init(hexString: String) {
-        let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+    convenience init(hex: String) {
+        let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int: UInt64 = 0
         Scanner(string: hex).scanHexInt64(&int)
         let a, r, g, b: UInt64
@@ -43,11 +43,11 @@ public extension UIColor {
     /// - Parameters:
     ///   - hex: 十六进制颜色值，例如：0xFF0000 表示红色
     ///   - alpha: 透明度 (0.0-1.0)
-    convenience init(hexString: UInt, alpha: CGFloat = 1.0) {
+    convenience init(hex: UInt, alpha: CGFloat = 1.0) {
         self.init(
-            red: CGFloat((hexString >> 16) & 0xff) / 255,
-            green: CGFloat((hexString >> 08) & 0xff) / 255,
-            blue: CGFloat((hexString >> 00) & 0xff) / 255,
+            red: CGFloat((hex >> 16) & 0xff) / 255,
+            green: CGFloat((hex >> 08) & 0xff) / 255,
+            blue: CGFloat((hex >> 00) & 0xff) / 255,
             alpha: alpha
         )
     }
