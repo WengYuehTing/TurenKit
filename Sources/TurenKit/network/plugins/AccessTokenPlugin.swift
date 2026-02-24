@@ -11,6 +11,9 @@ import Moya
 import OSLog
 
 public final class AccessTokenPlugin: PluginType {
+
+    public init() {}
+
     public func didReceive(_ result: Result<Response, MoyaError>, target _: TargetType) {
         switch result {
         case let .success(response):

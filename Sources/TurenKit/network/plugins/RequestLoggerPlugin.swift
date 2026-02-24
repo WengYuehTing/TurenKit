@@ -12,6 +12,8 @@ import OSLog
 public final class RequestLoggerPlugin: PluginType {
     // MARK: - Constants
 
+    public init() {}
+
     private enum Constants {
         static let maxLogLength = 1000
         static let truncationSuffix = "... (truncated)"
