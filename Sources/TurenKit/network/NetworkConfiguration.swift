@@ -9,6 +9,12 @@
 /// 用于存储网络请求的基础配置信息，包括域名和CDN地址
 public struct NetworkConfiguration {
 
+    /// 构造器
+    public init(domainUrl: String, cdnUrl: String) {
+        self.domainUrl = domainUrl
+        self.cdnUrl = cdnUrl
+    }
+
     /// API服务器域名地址
     public let domainUrl: String
 

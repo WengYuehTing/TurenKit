@@ -210,6 +210,10 @@ public extension String {
     func asUrl() -> URL? {
         return URL(string: self)
     }
+
+    func urlConcat(_ substring: String) -> String {
+        return self + "/" + substring
+    }
 }
 
 // MARK: - Optional String
