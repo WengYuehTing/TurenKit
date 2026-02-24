@@ -49,6 +49,8 @@ let package = Package(
                 .product(name: "Lottie", package: "lottie-spm"),
                 .product(name: "ESTabBarController", package: "ESTabBarController"),
                 .product(name: "Moya", package: "Moya"),
+                .product(name: "RxMoya", package: "Moya"),
+                .product(name: "ReactiveMoya", package: "Moya"),
             ]
         ),
         .testTarget(
