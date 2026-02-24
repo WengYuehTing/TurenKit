@@ -119,3 +119,7 @@ public func getScreenWidth() -> CGFloat {
 public func getScreenHeight() -> CGFloat {
     return UIScreen.main.bounds.size.height
 }
+
+public func i18n(_ key: String) -> String {
+    return NSLocalizedString(key, comment: "")
+}
