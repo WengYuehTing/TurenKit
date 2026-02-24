@@ -28,6 +28,7 @@ let package = Package(
         .package(url: "https://github.com/wxxsw/GSPlayer.git", .upToNextMajor(from: "0.2.30")),
         .package(url: "https://github.com/airbnb/lottie-spm.git", from: "4.5.2"),
         .package(url: "https://github.com/eggswift/ESTabBarController.git", .upToNextMajor(from: "2.9.0")),
+        .package(url: "https://github.com/Moya/Moya.git", .upToNextMajor(from: "15.0.0"))
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -47,6 +48,7 @@ let package = Package(
                 .product(name: "GSPlayer", package: "GSPlayer"),
                 .product(name: "Lottie", package: "lottie-spm"),
                 .product(name: "ESTabBarController", package: "ESTabBarController"),
+                .product(name: "Moya", package: "Moya"),
             ]
         ),
         .testTarget(
