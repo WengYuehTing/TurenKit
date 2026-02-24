@@ -80,3 +80,42 @@ public func formatToK(number: Int) -> String {
     let formatted = formatter.string(from: NSNumber(value: Double(number) / 1000)) ?? "\(number)"
     return "\(formatted)k"
 }
+
+func getReasonableBottomSafeArea(_ padding: CGFloat = 12) -> CGFloat {
+    let inset = getBottomSafeArea()
+    return inset == 0 ? padding : inset + padding
+}
+
+func getBottomSafeArea() -> CGFloat {
+    let windowScene = UIApplication.shared.connectedScenes
+        .first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene
+    let bottomSafeArea = windowScene?.windows.first?.safeAreaInsets.bottom ?? UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0.0
+    return bottomSafeArea
+}
+
+func getStatusBarHeight() -> CGFloat {
+    let localCache = UserDefaults.standard.float(forKey: "statusBarHeight")
+    if localCache != 0 {
+        return CGFloat(localCache)
+    } else {
+        if #available(iOS 13.0, *) {
+            let windowScene = UIApplication.shared.connectedScenes
+                .first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene
+            let statusBarHeight = windowScene?.statusBarManager?.statusBarFrame.height ?? UIApplication.shared.statusBarFrame.height
+            UserDefaults.standard.set(Float(statusBarHeight), forKey: "statusBarHeight")
+            return statusBarHeight
+        } else {
+            let statusBarHeight = UIApplication.shared.statusBarFrame.height
+            UserDefaults.standard.set(Float(statusBarHeight), forKey: "statusBarHeight")
+            return statusBarHeight
+        }
+    }
+}
+
+func getScreenWidth() -> CGFloat {
+    return UIScreen.main.bounds.size.height
+}
+
+func getScreenHeight() -> CGFloat {
+    return UIScreen.main.bounds.size.height
+}
