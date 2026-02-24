@@ -81,19 +81,19 @@ public func formatToK(number: Int) -> String {
     return "\(formatted)k"
 }
 
-func getReasonableBottomSafeArea(_ padding: CGFloat = 12) -> CGFloat {
+public func getReasonableBottomSafeArea(_ padding: CGFloat = 12) -> CGFloat {
     let inset = getBottomSafeArea()
     return inset == 0 ? padding : inset + padding
 }
 
-func getBottomSafeArea() -> CGFloat {
+public func getBottomSafeArea() -> CGFloat {
     let windowScene = UIApplication.shared.connectedScenes
         .first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene
     let bottomSafeArea = windowScene?.windows.first?.safeAreaInsets.bottom ?? UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0.0
     return bottomSafeArea
 }
 
-func getStatusBarHeight() -> CGFloat {
+public func getStatusBarHeight() -> CGFloat {
     let localCache = UserDefaults.standard.float(forKey: "statusBarHeight")
     if localCache != 0 {
         return CGFloat(localCache)
@@ -112,10 +112,10 @@ func getStatusBarHeight() -> CGFloat {
     }
 }
 
-func getScreenWidth() -> CGFloat {
+public func getScreenWidth() -> CGFloat {
     return UIScreen.main.bounds.size.height
 }
 
-func getScreenHeight() -> CGFloat {
+public func getScreenHeight() -> CGFloat {
     return UIScreen.main.bounds.size.height
 }
