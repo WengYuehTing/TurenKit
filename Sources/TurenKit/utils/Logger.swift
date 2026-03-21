@@ -13,6 +13,6 @@ extension Logger {
 
     // MARK: - Business Domain Loggers
 
-    /// DDOnboarding 引导流程模块日志
+    /// Network 网络模块日志
     static let network = Logger(subsystem: subsystem, category: "TurenKit_Network_Module")
 }
