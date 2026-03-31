@@ -27,7 +27,7 @@ let package = Package(
         .package(url: "https://github.com/CoderMJLee/MJRefresh.git", .upToNextMajor(from: "3.7.9")),
         .package(url: "https://github.com/wxxsw/GSPlayer.git", .upToNextMajor(from: "0.2.30")),
         .package(url: "https://github.com/airbnb/lottie-spm.git", from: "4.5.2"),
-        .package(url: "https://github.com/eggswift/ESTabBarController.git", .upToNextMajor(from: "2.9.0")),
+        .package(url: "https://github.com/eggswift/ESTabBarController.git", branch: "master"),
         .package(url: "https://github.com/Moya/Moya.git", .upToNextMajor(from: "15.0.0"))
     ],
     targets: [
